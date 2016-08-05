@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
     end
     
     def destroy
+        @article = Article.find(params[:id])
         Article.find(params[:id]).destroy
         
         flash.notice = "Article '#{@article.title}' Deleted!"
